@@ -16,6 +16,10 @@ from logger import Logger
 # get name for the logger
 logger = logging.getLogger("main_script")
 
+# directory for GRDC files:
+globalDirectoryGRDC = "/projects/0/dfguu/users/edwin/data/observation_data/grdc_monthly_data_splitted/"           # "/scratch/edwin/observation_data/grdc_monthly_data_splitted/"
+# This directory contains several sub-folders
+
 # PCR-GLOBWB results: model output directory 
 pcrglobwb_output = {}
 pcrglobwb_output["folder"]               = None # "/scratch/edwin/IWMI_run_20_nov/without_fossil_limit_with_pumping_limit_CRU/netcdf/"
@@ -24,9 +28,9 @@ pcrglobwb_output["folder"]               = None # "/scratch/edwin/IWMI_run_20_no
 globalAnalysisOutputDir = None  # "/scratch/edwin/IWMI_run_20_nov/without_fossil_limit_with_pumping_limit_CRU/analysis/monthly_discharge/"
 
 # optional: PCR-GLOBWB output and analysis output folders are based on the given the system argument
-if len(sys.argv) > 1:
-    pcrglobwb_output["folder"] = str(sys.argv[1])
-    globalAnalysisOutputDir    = str(sys.argv[1])+"/analysis/"
+if len(sys.argv) > 2:
+    pcrglobwb_output["folder"] = str(sys.argv[2])
+    globalAnalysisOutputDir    = str(sys.argv[2])+"/analysis/"
 try:
     os.makedirs(globalAnalysisOutputDir) 
 except:
@@ -37,15 +41,12 @@ pcrglobwb_output["netcdf_variable_name"] = "discharge"
 
 # netcdf file name:
 pcrglobwb_output["netcdf_file_name"]     = None # "netcdf/discharge_dailyTot_output.nc"
-if len(sys.argv) > 2:
-    pcrglobwb_output["netcdf_file_name"] = str(sys.argv[2])
+if len(sys.argv) > 3:
+    pcrglobwb_output["netcdf_file_name"] = str(sys.argv[3])
 
 # time range for analyses
 startDate = "1958-01-01" # None # "1960-01-31" #YYYY-MM-DD # None 
 endDate   = "2010-12-31" # None # "2010-12-31" #YYYY-MM-DD # None 
-
-# directory for GRDC files:
-globalDirectoryGRDC = "/home/edwin/github/edwinkost/hyperhydro_pcrglobwb/daily_discharge_analysis_scripts/rhine_daily_discharge_data/"
 
 # clone map
 globalCloneMapFileName = "/projects/0/dfguu/users/edwin/data/hyperhydro/hyperhydro_wg1/EFAS/clone_maps/RhineMeuseHyperHydro5min.clone.map"
