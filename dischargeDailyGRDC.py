@@ -506,7 +506,7 @@ class DailyDischargeEvaluation(object):
                     atrModel.close()
             
                 # save cropData to a .txt file:
-                txtModel = open(txtModelFile,"w")
+                txtModel = open(txtModelFile,"a")
                 np.savetxt(txtModelFile,cropData,delimiter=";") # two columns with date and model_result
             
             # close txt file
