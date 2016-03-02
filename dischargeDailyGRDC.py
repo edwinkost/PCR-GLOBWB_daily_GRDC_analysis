@@ -516,7 +516,7 @@ class DailyDischargeEvaluation(object):
             cmd = 'R -f evaluateDailyDischarge.R ' + self.attributeGRDC["grdc_file_name"][str(id)] + ' ' + txtModelFile
             print(cmd); os.system(cmd)
             
-            stop
+            sys.exit()
             
             # get model performance: read the output file (from R)
             try: 
