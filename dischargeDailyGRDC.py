@@ -474,7 +474,7 @@ class DailyDischargeEvaluation(object):
                 
                 # select specific ranges of date/year
                 nctime   = f.variables['time']                                # A netCDF time variable object. 
-                cropTime = range(nctime[0], nctime[-1] + 1, 1) 
+                cropTime = range(int(f.variables['time']), int(f.variables['time'][-1]) + 1, 1) 
                 
                 # assume that the netcdf file contains only one year:
                 cropData = cropData[:]
