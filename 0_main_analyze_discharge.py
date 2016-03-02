@@ -29,7 +29,7 @@ pcrglobwb_output["folder"]               = None # "/scratch/edwin/IWMI_run_20_no
 # optional: PCR-GLOBWB output and analysis output folders are based on the given the system argument
 if len(sys.argv) > 2:
     pcrglobwb_output["folder"] = str(sys.argv[2])
-    globalAnalysisOutputDir    = str(sys.argv[2]) + "/analysis/daily_discharge/" + sub_folder
+    globalAnalysisOutputDir    = pcrglobwb_output["folder"] + "/analysis/daily_discharge/" + sub_folder
 try:
     os.makedirs(globalAnalysisOutputDir) 
 except:
