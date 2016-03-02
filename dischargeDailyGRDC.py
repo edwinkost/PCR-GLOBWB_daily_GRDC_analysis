@@ -267,7 +267,7 @@ class DailyDischargeEvaluation(object):
 
 
         # write the summary to a table 
-        summary_file = analysisOutputDir+"summary.txt"
+        summary_file = analysisOutputDir+"/summary.txt"
         #
         logger.info("Writing the summary for all stations to the file: "+str(summary_file)+".")
         #
