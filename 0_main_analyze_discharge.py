@@ -17,20 +17,19 @@ from logger import Logger
 logger = logging.getLogger("main_script")
 
 # directory for GRDC files:
-globalDirectoryGRDC = "/projects/0/dfguu/users/edwin/data/observation_data/grdc_monthly_data_splitted/"           # "/scratch/edwin/observation_data/grdc_monthly_data_splitted/"
-# This directory contains several sub-folders
+globalDirectoryGRDC = "/projects/0/dfguu/users/edwin/data/observation_data/grdc_daily_data_splitted/"
+# This directory contains several sub-folders based on the given system argument 
+sub_folder = str(sys.argv[1])
+globalDirectoryGRDC = globalDirectoryGRDC + "/" +  
 
 # PCR-GLOBWB results: model output directory 
 pcrglobwb_output = {}
 pcrglobwb_output["folder"]               = None # "/scratch/edwin/IWMI_run_20_nov/without_fossil_limit_with_pumping_limit_CRU/netcdf/"
 
-# output directory storing analysis results (results from this script)
-globalAnalysisOutputDir = None  # "/scratch/edwin/IWMI_run_20_nov/without_fossil_limit_with_pumping_limit_CRU/analysis/monthly_discharge/"
-
 # optional: PCR-GLOBWB output and analysis output folders are based on the given the system argument
 if len(sys.argv) > 2:
     pcrglobwb_output["folder"] = str(sys.argv[2])
-    globalAnalysisOutputDir    = str(sys.argv[2])+"/analysis/"
+    globalAnalysisOutputDir    = str(sys.argv[2]) + "/analysis/daily_discharge/" + sub_folder
 try:
     os.makedirs(globalAnalysisOutputDir) 
 except:
@@ -69,7 +68,7 @@ def main():
     # make analysisOutputDir
     # option to clean analysisOutputDir
     cleanOutputDir    = True 		
-    analysisOutputDir = globalAnalysisOutputDir+"/daily_discharge_1958-2010/"
+    analysisOutputDir = globalAnalysisOutputDir
     try:
         os.makedirs(analysisOutputDir) 
     except:
