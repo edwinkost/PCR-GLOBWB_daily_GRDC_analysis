@@ -507,7 +507,7 @@ class DailyDischargeEvaluation(object):
             
                 # save cropData to a .txt file:
                 txtModel = open(txtModelFile,"a")
-                np.savetxt(txtModelFile,cropData,delimiter=";") # two columns with date and model_result
+                np.savetxt(txtModel,cropData,delimiter=";") # two columns with date and model_result
             
             # close txt file
             txtModel.close()
