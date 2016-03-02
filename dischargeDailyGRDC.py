@@ -436,13 +436,15 @@ class DailyDischargeEvaluation(object):
                 
                 logger.info("Reading and evaluating the model result for the grdc station "+str(id)+" from "+ncFile)
                 
-                if ncFile in filecache.keys():
-                    f = filecache[ncFile]
-                    print "Cached: ", ncFile
-                else:
-                    f = nc.Dataset(ncFile)
-                    filecache[ncFile] = f
-                    print "New: ", ncFile
+                f = nc.Dataset(ncFile)
+
+                #~ if ncFile in filecache.keys():
+                    #~ f = filecache[ncFile]
+                    #~ print "Cached: ", ncFile
+                #~ else:
+                    #~ f = nc.Dataset(ncFile)
+                    #~ filecache[ncFile] = f
+                    #~ print "New: ", ncFile
                 
                 #
                 varName = pcrglobwb_output["netcdf_variable_name"]
@@ -483,6 +485,8 @@ class DailyDischargeEvaluation(object):
                 cropData = np.column_stack((cropTime,cropData))
                 print(cropData)
             
+                f.close()
+
                 # for the first year, make a randomDir containing txt files (attribute and model result):
                 if year == year_list[0]:
                     
