@@ -20,7 +20,7 @@ logger = logging.getLogger("main_script")
 globalDirectoryGRDC = "/projects/0/dfguu/users/edwin/data/observation_data/grdc_daily_data_splitted/"
 # This directory contains several sub-folders based on the given system argument 
 sub_folder = str(sys.argv[1])
-globalDirectoryGRDC = globalDirectoryGRDC + "/" +  
+globalDirectoryGRDC = globalDirectoryGRDC + "/" + sub_folder 
 
 # PCR-GLOBWB results: model output directory 
 pcrglobwb_output = {}
