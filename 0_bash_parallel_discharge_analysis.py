@@ -9,10 +9,11 @@ import os
 pcrglobwb_output_folder = str(sys.argv[1])
 
 number_of_subfolders = 19
+number_of_maxprocess = 3
 
 for i in range(1, number_of_subfolders + 1, 1):
     sub_folder = '%02i' %(i)
     cmd = 'python 0_main_analyze_discharge.py '+ sub_folder + " " + pcrglobwb_output_folder + " discharge_dailyTot_output "
-    if (i % 5 != 0): cmd = cmd + " & "
+    if (i % number_of_maxprocess != 0): cmd = cmd + " & "
     print cmd
     os.system(cmd)
