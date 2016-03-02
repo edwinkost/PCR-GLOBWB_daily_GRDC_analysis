@@ -48,7 +48,7 @@ startDate = "1958-01-01" # None # "1960-01-31" #YYYY-MM-DD # None
 endDate   = "2010-12-31" # None # "2010-12-31" #YYYY-MM-DD # None 
 
 # clone map
-globalCloneMapFileName = "/projects/0/dfguu/users/edwin/data/hyperhydro/hyperhydro_wg1/EFAS/clone_maps/RhineMeuseHyperHydro5min.clone.map"
+globalCloneMapFileName = "/projects/0/dfguu/data/hydroworld/PCRGLOBWB20/input5min/routing/lddsound_05min.map"
 
 # ldd and cell area maps
 lddMapFileName         = "/projects/0/dfguu/data/hydroworld/PCRGLOBWB20/input5min/routing/lddsound_05min.map"
