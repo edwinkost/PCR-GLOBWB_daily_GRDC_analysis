@@ -9,7 +9,7 @@ import os
 pcrglobwb_output_folder = str(sys.argv[1])
 
 number_of_subfolders = 19
-number_of_maxprocess = 3
+number_of_maxprocess = 2
 
 for i in range(1, number_of_subfolders + 1, 1):
     sub_folder = '%02i' %(i)
