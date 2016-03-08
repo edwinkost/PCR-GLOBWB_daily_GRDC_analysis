@@ -33,7 +33,7 @@ if len(sys.argv) > 2:
     # this only for running using the account "edwinhs":
     if str(sys.argv[2]) == "specific":
         pcrglobwb_output["folder"] = "/scratch-shared/edwin/05min_runs_january_2016_merged/pcrglobwb_only_from_1958_4LCs_edwin_parameter_set_kinematic_wave/daily/"
-        globalAnalysisOutputDir  = "/scratch-shared/edwinhs/05min_runs_january_2016_merged/pcrglobwb_only_from_1958_4LCs_edwin_parameter_set_kinematic_wave/daily/ + "/analysis/daily_discharge/" + sub_folder
+        globalAnalysisOutputDir  = "/scratch-shared/edwinhs/05min_runs_january_2016_merged/pcrglobwb_only_from_1958_4LCs_edwin_parameter_set_kinematic_wave/daily/" + "/analysis/daily_discharge/" + sub_folder
 try:
     os.makedirs(globalAnalysisOutputDir) 
 except:
