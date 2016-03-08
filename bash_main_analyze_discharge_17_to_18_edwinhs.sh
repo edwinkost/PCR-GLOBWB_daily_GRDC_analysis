@@ -1,4 +1,4 @@
 
-python 0_main_analyze_discharge.py 17 specific discharge_dailyTot_output
-python 0_main_analyze_discharge.py 18 specific discharge_dailyTot_output
+python 0_main_analyze_discharge_edwinhs.py 17 specific discharge_dailyTot_output
+python 0_main_analyze_discharge_edwinhs.py 18 specific discharge_dailyTot_output
 
